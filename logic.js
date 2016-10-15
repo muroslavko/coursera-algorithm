@@ -3,6 +3,10 @@
 class UF{
 	constructor(n){
 		this.N = n;
+		this.connections = [];
+		for(let i = 0; i < this.N; i++ ) {
+			this.connections[i] = i;
+		}
     }
     
     connected(p, q){
