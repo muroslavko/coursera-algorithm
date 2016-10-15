@@ -1,6 +1,7 @@
 window.onload = function() {
 		var fileInput = document.getElementById('fileInput');
 		var fileDisplayArea = document.getElementById('fileDisplayArea');
+		var resultDisplayArea = document.getElementById('resultDisplayArea');
 
 		fileInput.addEventListener('change', function(e) {
 			var file = fileInput.files[0];
@@ -16,7 +17,8 @@ window.onload = function() {
 					});	
 					let n = result[0][0];
 					result.shift();
-					Main.start(n, result);
+					resultDisplayArea.innerText = Main.start(n, result);
+					debugger;
 				}
 
 				reader.readAsText(file);	
