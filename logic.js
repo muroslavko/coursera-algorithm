@@ -10,7 +10,7 @@ class UF{
     }
     
     connected(p, q){
-		
+		return this.connections[p] === this.connections[q];		
     }
 	
 	union(p, q){
@@ -20,16 +20,19 @@ class UF{
 
 class Main {
     static start(N, connections){
+		//debugger;
 		let uf = new UF(N);
-		while (!StdIn.isEmpty()) {
-			let p = StdIn.readInt();
-			let q = StdIn.readInt();
+		connections.forEach((item) => {
+			let p = item[0];
+			let q = item[1];
 			if (!uf.connected(p, q)) {
-				uf.union(p, q);
-				StdOut.println(p + " " + q);
+				// uf.union(p, q);
+				// StdOut.println(p + " " + q);
+				console.log('not connected')
 			}
-		}
+		});
+		console.log('ok');
     }
 }
 
-Main.start();
+//Main.start();
